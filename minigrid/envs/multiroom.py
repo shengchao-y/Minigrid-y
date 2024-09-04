@@ -3,7 +3,7 @@ from __future__ import annotations
 from minigrid.core.constants import COLOR_NAMES
 from minigrid.core.grid import Grid
 from minigrid.core.mission import MissionSpace
-from minigrid.core.world_object import Door, Goal, Wall
+from minigrid.core.world_object import Door, Goal, Wall, Lava
 from minigrid.minigrid_env import MiniGridEnv
 
 
@@ -138,7 +138,8 @@ class MultiRoomEnv(MiniGridEnv):
 
         # Create the grid
         self.grid = Grid(width, height)
-        wall = Wall()
+        # wall = Wall()
+        wall = Lava()
 
         prevDoorColor = None
 

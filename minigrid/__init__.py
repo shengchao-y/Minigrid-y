@@ -201,6 +201,15 @@ def register_minigrid_envs():
         kwargs={"size": 16},
     )
 
+    # Gaming
+    # ---------------------------------------- 
+
+    register(
+        id="MiniGrid-Gaming-10x10-v0",
+        entry_point="minigrid.envs:GamingEnv",
+        kwargs={"size": 10},
+    )
+
     # Fetch
     # ----------------------------------------
 
@@ -379,7 +388,13 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-MultiRoom-N4-S5-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
-        kwargs={"minNumRooms": 6, "maxNumRooms": 6, "maxRoomSize": 5},
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5, "max_steps": 200},
+    )
+
+    register(
+        id="MiniGrid-MultiRoom-N3-S5-v0",
+        entry_point="minigrid.envs:MultiRoomEnv",
+        kwargs={"minNumRooms": 3, "maxNumRooms": 3, "maxRoomSize": 5, "max_steps": 140},
     )
 
     register(
