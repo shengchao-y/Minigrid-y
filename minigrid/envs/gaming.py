@@ -69,7 +69,7 @@ class GamingEnv(MiniGridEnv):
         self.agent_start_dir = agent_start_dir
 
         mission_space = MissionSpace(mission_func=self._gen_mission)
-        self.obj_types = [Box, Floor, Door, Key, Ball]
+        self.obj_types = [Box, Floor, Key, Ball]
         self.colors = list(COLORS.keys())
 
         super().__init__(
@@ -95,13 +95,13 @@ class GamingEnv(MiniGridEnv):
         # Place random objects to increase obs novelty
         for i in range(2, width-2):
             for j in range(2, height-2):
-                obj_ind = self._rand_int(0,5)
+                obj_ind = self._rand_int(0,len(self.obj_types))
                 obj_type = self.obj_types[obj_ind]
-                color_ind = self._rand_int(0,6)
+                color_ind = self._rand_int(0,len(self.colors))
                 if obj_ind > 0:
                     self.put_obj(obj_type(color=self.colors[color_ind]), i, j)
                 else:
-                    contain_ind = self._rand_int(0,5)
+                    contain_ind = self._rand_int(0,len(self.obj_types))
                     self.put_obj(obj_type(color=self.colors[color_ind], contains=self.obj_types[contain_ind](color=self.colors[color_ind])), i, j)
 
         # Place a goal square in the bottom-right corner

@@ -205,9 +205,9 @@ def register_minigrid_envs():
     # ---------------------------------------- 
 
     register(
-        id="MiniGrid-Gaming-20x20-v0",
+        id="MiniGrid-Gaming-v0",
         entry_point="minigrid.envs:GamingEnv",
-        kwargs={"size": 20, "max_steps": 1000},
+        kwargs={"size": 10, "max_steps": 1000},
     )
 
     # Fetch
@@ -238,7 +238,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-FourRooms-Lava-v0",
         entry_point="minigrid.envs:FourRoomsLavaEnv",
-        kwargs={"max_steps": 100}
+        kwargs={"max_steps": 220}
     )
 
     # GoToDoor
