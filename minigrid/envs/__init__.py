@@ -8,14 +8,14 @@ from minigrid.envs.dynamicobstacles import DynamicObstaclesEnv
 from minigrid.envs.empty import EmptyEnv
 from minigrid.envs.gaming import GamingEnv
 from minigrid.envs.fetch import FetchEnv
-from minigrid.envs.fourrooms import FourRoomsEnv
+from minigrid.envs.fourrooms import FourRoomsEnv, FourRoomsLavaEnv
 from minigrid.envs.gotodoor import GoToDoorEnv
 from minigrid.envs.gotoobject import GoToObjectEnv
 from minigrid.envs.keycorridor import KeyCorridorEnv
 from minigrid.envs.lavagap import LavaGapEnv
-from minigrid.envs.lockedroom import LockedRoom, LockedRoomEnv
+from minigrid.envs.lockedroom import LockedRoom, LockedRoomEnv, LockedRoomLavaEnv
 from minigrid.envs.memory import MemoryEnv
-from minigrid.envs.multiroom import MultiRoom, MultiRoomEnv
+from minigrid.envs.multiroom import MultiRoom, MultiRoomEnv, MultiRoomLavaEnv
 from minigrid.envs.obstructedmaze import (
     ObstructedMaze_1Dlhb,
     ObstructedMaze_Full,

@@ -205,9 +205,9 @@ def register_minigrid_envs():
     # ---------------------------------------- 
 
     register(
-        id="MiniGrid-Gaming-10x10-v0",
+        id="MiniGrid-Gaming-20x20-v0",
         entry_point="minigrid.envs:GamingEnv",
-        kwargs={"size": 10},
+        kwargs={"size": 20, "max_steps": 1000},
     )
 
     # Fetch
@@ -233,6 +233,11 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-FourRooms-v0",
         entry_point="minigrid.envs:FourRoomsEnv",
+    )
+
+    register(
+        id="MiniGrid-FourRooms-Lava-v0",
+        entry_point="minigrid.envs:FourRoomsLavaEnv",
     )
 
     # GoToDoor
@@ -337,6 +342,11 @@ def register_minigrid_envs():
         entry_point="minigrid.envs:LockedRoomEnv",
     )
 
+    register(
+        id="MiniGrid-LockedRoomLava-v0",
+        entry_point="minigrid.envs:LockedRoomLavaEnv",
+    )
+
     # Memory
     # ----------------------------------------
 
@@ -388,19 +398,31 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-MultiRoom-N4-S5-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
-        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5, "max_steps": 200},
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5},
     )
 
     register(
         id="MiniGrid-MultiRoom-N3-S5-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
-        kwargs={"minNumRooms": 3, "maxNumRooms": 3, "maxRoomSize": 5, "max_steps": 140},
+        kwargs={"minNumRooms": 3, "maxNumRooms": 3, "maxRoomSize": 5},
     )
 
     register(
         id="MiniGrid-MultiRoom-N6-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
         kwargs={"minNumRooms": 6, "maxNumRooms": 6},
+    )
+
+    register(
+        id="MiniGrid-MultiRoomLava-N4-S5-v0",
+        entry_point="minigrid.envs:MultiRoomLavaEnv",
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5, "max_steps": 100},
+    )
+
+    register(
+        id="MiniGrid-MultiRoomLava-N6-v0",
+        entry_point="minigrid.envs:MultiRoomLavaEnv",
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "max_steps": 160},
     )
 
     # ObstructedMaze
