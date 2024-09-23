@@ -238,6 +238,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-FourRooms-Lava-v0",
         entry_point="minigrid.envs:FourRoomsLavaEnv",
+        kwargs={"max_steps": 100}
     )
 
     # GoToDoor
@@ -345,6 +346,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-LockedRoomLava-v0",
         entry_point="minigrid.envs:LockedRoomLavaEnv",
+        kwargs={"max_steps": 190},
     )
 
     # Memory
