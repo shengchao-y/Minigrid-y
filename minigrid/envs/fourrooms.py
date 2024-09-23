@@ -4,7 +4,7 @@ from minigrid.core.grid import Grid
 from minigrid.core.mission import MissionSpace
 from minigrid.core.world_object import Goal, Lava
 from minigrid.minigrid_env import MiniGridEnv
-
+import random
 
 class FourRoomsEnv(MiniGridEnv):
     """
@@ -175,6 +175,7 @@ class FourRoomsLavaEnv(FourRoomsEnv):
     - `MiniGrid-FourRoomsLava-v0`
 
     """
+    top_rooms = [(1,1), (1,10), (10,1), (10,10)]
 
     def __init__(self, agent_pos=None, goal_pos=None, max_steps=100, **kwargs):
         super().__init__(
@@ -218,6 +219,9 @@ class FourRoomsLavaEnv(FourRoomsEnv):
                     pos = (self._rand_int(xL + 1, xR), yB)
                     self.grid.set(*pos, None)
 
+        # Put agent and target in different rooms
+        room_agent, room_target = random.sample([0,1,2,3], 2)
+
         # Randomize the player start position and orientation
         if self._agent_default_pos is not None:
             self.agent_pos = self._agent_default_pos
@@ -225,11 +229,11 @@ class FourRoomsLavaEnv(FourRoomsEnv):
             # assuming random start direction
             self.agent_dir = self._rand_int(0, 4)
         else:
-            self.place_agent()
+            self.place_agent(top=self.top_rooms[room_agent],size=(8,8))
 
         if self._goal_default_pos is not None:
             goal = Goal()
             self.put_obj(goal, *self._goal_default_pos)
             goal.init_pos, goal.cur_pos = self._goal_default_pos
         else:
-            self.place_obj(Goal())
+            self.place_obj(Goal(), top=self.top_rooms[room_target], size=(8,8))
