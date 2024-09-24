@@ -125,6 +125,12 @@ def register_minigrid_envs():
         kwargs={"size": 16},
     )
 
+    register(
+        id="MiniGrid-DoorKeyLava-8x8-v0",
+        entry_point="minigrid.envs:DoorKeyLavaEnv",
+        kwargs={"size": 8, "max_steps": 400},
+    )
+
     # Dynamic-Obstacles
     # ----------------------------------------
 
