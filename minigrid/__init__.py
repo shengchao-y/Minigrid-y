@@ -128,7 +128,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-DoorKeyLava-8x8-v0",
         entry_point="minigrid.envs:DoorKeyLavaEnv",
-        kwargs={"size": 8, "max_steps": 400},
+        kwargs={"size": 8, "max_steps": 100},
     )
 
     # Dynamic-Obstacles
@@ -213,7 +213,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-Gaming-v0",
         entry_point="minigrid.envs:GamingEnv",
-        kwargs={"size": 10, "max_steps": 1000},
+        kwargs={"size": 40, "max_steps": 1000},
     )
 
     # Fetch
@@ -430,7 +430,7 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-MultiRoomLava-N6-v0",
         entry_point="minigrid.envs:MultiRoomLavaEnv",
-        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "max_steps": 160},
+        kwargs={"minNumRooms": 6, "maxNumRooms": 6, "max_steps": 200},
     )
 
     # ObstructedMaze
