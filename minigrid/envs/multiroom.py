@@ -327,9 +327,8 @@ class MultiRoomLavaEnv(MultiRoomEnv):
     S: size of map SxS.
     N: number of rooms.
 
-    - `MiniGrid-MultiRoom-N2-S4-v0` (two small rooms)
-    - `MiniGrid-MultiRoom-N4-S5-v0` (four rooms)
-    - `MiniGrid-MultiRoom-N6-v0` (six rooms)
+    - `MiniGrid-MultiRoomLava-N4-S5-v0` (four rooms)
+    - `MiniGrid-MultiRoomLava-N6-v0` (six rooms)
 
     """
 
