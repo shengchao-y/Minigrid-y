@@ -242,7 +242,10 @@ class MiniGridEnv(gym.Env):
         Compute the reward to be given upon success
         """
 
-        return 1 - 0.9 * (self.step_count / self.max_steps)
+        # max_steps can largely influence the learning results
+        # thanks to discount factor, the goal reward does not 
+        # need to be dependent on step_count
+        return 1 #- 0.9 * (self.step_count / self.max_steps)
 
     def _rand_int(self, low: int, high: int) -> int:
         """

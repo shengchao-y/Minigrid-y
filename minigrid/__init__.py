@@ -124,6 +124,12 @@ def register_minigrid_envs():
         entry_point="minigrid.envs:DoorKeyEnv",
         kwargs={"size": 16},
     )
+    
+    register(
+        id="MiniGrid-DoorKeyLO-8x8-v0",
+        entry_point="minigrid.envs:DoorKeyLOEnv",
+        kwargs={"size": 8, "max_steps": 35},
+    )
 
     # Dynamic-Obstacles
     # ----------------------------------------
@@ -379,13 +385,19 @@ def register_minigrid_envs():
     register(
         id="MiniGrid-MultiRoom-N4-S5-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
-        kwargs={"minNumRooms": 6, "maxNumRooms": 6, "maxRoomSize": 5},
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5},
     )
 
     register(
         id="MiniGrid-MultiRoom-N6-v0",
         entry_point="minigrid.envs:MultiRoomEnv",
         kwargs={"minNumRooms": 6, "maxNumRooms": 6},
+    )
+
+    register(
+        id="MiniGrid-MultiRoomLO-N4-S5-v0",
+        entry_point="minigrid.envs:MultiRoomLOEnv",
+        kwargs={"minNumRooms": 4, "maxNumRooms": 4, "maxRoomSize": 5, "max_steps": 80},
     )
 
     # ObstructedMaze
