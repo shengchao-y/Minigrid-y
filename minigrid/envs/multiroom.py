@@ -585,7 +585,7 @@ class MultiRoomLOEnv(MiniGridEnv):
         elif action == self.actions.pickup:
             if fwd_cell and fwd_cell.can_pickup():
                 # get the new key:
-                reward = 0.001
+                reward = 0.01
                 # remove Ball on the map
                 self.grid.set(fwd_pos[0], fwd_pos[1], None)
                 # place a new Ball
@@ -594,7 +594,7 @@ class MultiRoomLOEnv(MiniGridEnv):
 
         # Drop an object
         elif action == self.actions.drop:
-            pass # do not drop in the doorkey env
+            pass # do not drop in this env
 
         # Toggle/activate an object
         elif action == self.actions.toggle:
