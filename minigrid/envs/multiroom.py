@@ -585,7 +585,7 @@ class MultiRoomLOEnv(MiniGridEnv):
         elif action == self.actions.pickup:
             if fwd_cell and fwd_cell.can_pickup():
                 # get the new key:
-                reward = 0.01
+                reward = 0.02
                 # remove Ball on the map
                 self.grid.set(fwd_pos[0], fwd_pos[1], None)
                 # place a new Ball
